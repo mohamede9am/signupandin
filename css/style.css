@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(14, 13, 13);
+    overflow: hidden;
+}
+.box {
+    position: relative;
+    background-color: rgb(20, 19, 19);
+    box-shadow: 0 0 10px rgba(83, 83, 83, 0.5);
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    height: 52vh;
+    border-radius: 8px;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    border-image: linear-gradient(120deg, #32b5be, #32b5be) 1;
+    animation: disco 8s ease-in-out infinite;
+    z-index: -1;
+}
+@keyframes disco {
+    0% {
+    transform: rotate(0deg);
+    }
+    25% {
+    transform: rotate(45deg);
+    }
+    50% {
+    transform: rotate(90deg);
+    }
+    75% {
+    transform: rotate(135deg);
+    }
+    100% {
+    transform: rotate(180deg);
+    }
+}
+.form-content {
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.h2-text h2 {
+    color: #32b5be;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    font-size: 52px;
+    margin: 50px 0;
+}
+.span-na {
+    color:#a3a1a1 ;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma;
+    display: flex;
+    align-items: center;
+}
+.sub {
+    display: block;
+    margin: 0 auto;
+}
+.input-info {
+    position: relative;
+}
+.user , .pass {
+    padding: 20px 10px 10px;
+    margin-bottom: 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #81838a;
+    letter-spacing:  0.05rem;
+    border: 0;
+    pointer-events: inherit;
+}
+.span-na {
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05rem;
+    transition: .5s;
+}
+.input-info input:focus ~ .span-na {
+    color: aqua;
+    font-size: 14px;
+    transform: translateY(-5px);
+}
+.col-dd {
+display: flex;
+justify-content:space-between;
+width: 23%;
+}
+.col-dd a {
+    font-size: 14px;
+    text-decoration: none;
+    color: #8f8f8f ;
+}
+.sub {
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #fff;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+.sub:hover {
+    transform: scale(1.1);
+}
+.sub:active {
+    transform: scale(0.2);
+}
+/* Media query for phones */
+@media only screen and (max-width: 767px) {
+    .col-dd {
+        display: flex;
+        justify-content:space-between;
+        width: 100% !important;
+        }
+        .h2-text h2 {
+            font-size: 32px !important;
+        }
+        .box {
+            position: relative;
+            background-color: rgb(20, 19, 19);
+            box-shadow: 0 0 10px rgba(83, 83, 83, 0.5);
+            width: auto !important;
+            display: block;
+            margin: 0 auto;
+            height: 52vh !important;
+            border-radius: 8px;
+        }
+        .box::before {
+            content: '';
+            position: absolute;
+
+            border-radius: 8px;
+            border: 2px solid transparent;
+            border-image: linear-gradient(20deg, #32b5be, #32b5be) 1 !important;
+            animation: disco 8s ease-in infinite;
+            z-index: -1;
+        }
+}
+  /* Media query for tablets */
+@media only screen and (min-width: 767px) and (max-width: 1023px) {
+    .col-dd {
+        display: flex;
+        justify-content:space-between;
+        width: 40% !important;
+        }
+}
